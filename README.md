@@ -42,7 +42,7 @@ iWeb/
 
 ## 🌐 Language
 
-Every string on the site — menus, dialogs, window content and game overlays — ships in both European Portuguese and English through a small `i18n.js` module. The chosen language is saved in `localStorage` and applied instantly across the desktop windows and every standalone page.
+Every string on the site — menus, dialogs, window content and game overlays — ships in both European Portuguese and English through a small `i18n.js` module. It defaults to English; switching to Portuguese sticks for the rest of that browsing session (across windows, page navigations and reloads), and resets to English on the next visit.
 
 ## 🚀 How to Run
 
@@ -62,7 +62,7 @@ No build step, no dependencies — it's static HTML/CSS/JS and can also be serve
 
 - This was my **first portfolio site**. It's no longer maintained — I later moved to [ividi.dev](https://ividi.dev/), my current portfolio
 - The Projects window/page fetches my repositories live from the GitHub API, so it always reflects my latest work
-- Language preference is stored in `localStorage`, so it persists between visits
+- The site always opens in English; the language toggle only sticks for the current browsing session
 
 ---
 

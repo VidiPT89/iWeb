@@ -2,7 +2,9 @@
 
 /* ═══════════════════════════════════════════════════════════════════════════
    I18N — PT-PT / EN toggle, shared by every page (index, about, projects,
-   skills, contact). Preference is stored in localStorage and survives reloads.
+   skills, contact). Preference is stored in sessionStorage: it sticks while
+   browsing (including page navigations and reloads within the same tab), but
+   every new visit starts fresh in English.
 ══════════════════════════════════════════════════════════════════════════════ */
 const LANG_KEY = 'iweb-lang';
 
@@ -383,12 +385,12 @@ const I18N = {
 };
 
 function getLang() {
-  const stored = localStorage.getItem(LANG_KEY);
+  const stored = sessionStorage.getItem(LANG_KEY);
   return stored === 'pt' ? 'pt' : 'en';
 }
 
 function setLang(lang) {
-  localStorage.setItem(LANG_KEY, lang === 'pt' ? 'pt' : 'en');
+  sessionStorage.setItem(LANG_KEY, lang === 'pt' ? 'pt' : 'en');
   location.reload();
 }
 
