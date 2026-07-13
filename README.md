@@ -1,6 +1,6 @@
-# 🖥️ Vidi.deV Portfolio — A Mac OS System 7 Desktop, Rebuilt as a Website
+# 🖥️ Portfolio iVidi.dev — A Mac OS System 7 Desktop, Rebuilt as a Website
 
-> My first portfolio site — a working desktop environment inspired by classic Mac OS System 7, complete with draggable windows, dropdown menus, a terminal boot sequence and two built-in arcade games.
+> My first portfolio site — a working desktop environment inspired by classic Mac OS System 7, complete with draggable windows, dropdown menus, a terminal boot sequence and two built-in arcade games. Later replaced by [ividi.dev](https://ividi.dev/), my current portfolio.
 
 **🎮 [Live Demo](https://vidipt89.github.io/iWeb/)**
 
@@ -60,7 +60,7 @@ No build step, no dependencies — it's static HTML/CSS/JS and can also be serve
 
 ## 📝 Notes
 
-- This was my first portfolio site, so it's no longer up to date — my current portfolio lives at [ividi.dev](https://ividi.dev/)
+- This was my **first portfolio site**. It's no longer maintained — I later moved to [ividi.dev](https://ividi.dev/), my current portfolio
 - The Projects window/page fetches my repositories live from the GitHub API, so it always reflects my latest work
 - Language preference is stored in `localStorage`, so it persists between visits
 

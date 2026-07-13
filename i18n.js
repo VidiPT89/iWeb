@@ -62,7 +62,7 @@ const I18N = {
     pacman_status: 'Usa ← → ↑ ↓',
     mario_status: '← → ↑ Z Espaço',
 
-    boot_title: 'Portfolio Vidi.deV',
+    boot_title: 'Portfolio iVidi.dev',
     boot_0: 'A iniciar o sistema…',
     boot_1: 'A carregar extensões…',
     boot_2: 'A verificar disco de portfólio…',
@@ -249,7 +249,7 @@ const I18N = {
     pacman_status: 'Use ← → ↑ ↓',
     mario_status: '← → ↑ Z Space',
 
-    boot_title: 'Portfolio Vidi.deV',
+    boot_title: 'Portfolio iVidi.dev',
     boot_0: 'Starting up the system…',
     boot_1: 'Loading extensions…',
     boot_2: 'Checking portfolio disk…',
@@ -384,11 +384,11 @@ const I18N = {
 
 function getLang() {
   const stored = localStorage.getItem(LANG_KEY);
-  return stored === 'en' ? 'en' : 'pt';
+  return stored === 'pt' ? 'pt' : 'en';
 }
 
 function setLang(lang) {
-  localStorage.setItem(LANG_KEY, lang === 'en' ? 'en' : 'pt');
+  localStorage.setItem(LANG_KEY, lang === 'pt' ? 'pt' : 'en');
   location.reload();
 }
 
