@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me — David Arsénio Martins</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="menubar">
+  <div class="mb mb-apple" data-dd="dd-apple">
+    <svg width="14" height="17" viewBox="0 0 14 17" style="display:block">
+      <defs>
+        <linearGradient id="rbow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#4CAF50"/>
+          <stop offset="20%"  stop-color="#8BC34A"/>
+          <stop offset="40%"  stop-color="#FFEB3B"/>
+          <stop offset="60%"  stop-color="#FF9800"/>
+          <stop offset="80%"  stop-color="#F44336"/>
+          <stop offset="100%" stop-color="#9C27B0"/>
+        </linearGradient>
+      </defs>
+      <path d="M7 1 C7 1 9 -0.5 11 1 C11 1 9.5 2 9.5 3.5"
+            stroke="url(#rbow)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M9.5 3.5 C11.5 3.5 14 5.5 14 9 C14 13 11.5 17 9 17
+               C8 17 7.5 16 7 16 C6.5 16 6 17 5 17
+               C2.5 17 0 13 0 9 C0 5.5 2.5 3.5 4.5 3.5
+               C5.5 3.5 6.5 3.5 7 3.5 C7.5 3.5 8.5 3.5 9.5 3.5Z"
+            fill="url(#rbow)"/>
+    </svg>
+  </div>
+  <div class="mb" data-dd="dd-file" data-i18n="menu_file">Ficheiro</div>
+  <div class="mb" data-dd="dd-edit" data-i18n="menu_edit">Editar</div>
+  <div class="mb" data-dd="dd-special" data-i18n="menu_special">Especial</div>
+  <div id="mb-clock"></div>
+</nav>
+
+<div class="dd" id="dd-apple">
+  <div class="ddi" onclick="openDlg('about-sys')" data-i18n="dd_apple_about_sys">Sobre este Portfolio…</div>
+  <div class="dds"></div>
+  <div class="ddi off" data-i18n="dd_apple_control_panel">Painel de Controlo</div>
+  <div class="dds"></div>
+  <div class="ddi" onclick="openDlg('restart')" data-i18n="dd_apple_restart">Reiniciar…</div>
+</div>
+
+<div class="dd" id="dd-file">
+  <div class="ddi" onclick="window.location.href='index.html'" data-i18n="dd_file_back_desktop">← Voltar ao Desktop</div>
+  <div class="dds"></div>
+  <div class="ddi" style="font-weight:bold" data-i18n="win_about">About Me</div>
+  <div class="ddi" onclick="window.location.href='projects.html'" data-i18n="win_projects">Projects</div>
+  <div class="ddi" onclick="window.location.href='skills.html'" data-i18n="win_skills">Skills</div>
+  <div class="ddi" onclick="window.location.href='contact.html'" data-i18n="win_contact">Contact</div>
+  <div class="dds"></div>
+  <div class="ddi" onclick="window.location.href='index.html'" data-i18n-html data-i18n="dd_file_close_window_full">Fechar Janela &nbsp;⌘W</div>
+</div>
+
+<div class="dd" id="dd-edit">
+  <div class="ddi off" data-i18n-html data-i18n="dd_edit_undo_full">Desfazer &nbsp;⌘Z</div>
+  <div class="dds"></div>
+  <div class="ddi off" data-i18n-html data-i18n="dd_edit_cut_full">Cortar &nbsp;⌘X</div>
+  <div class="ddi off" data-i18n-html data-i18n="dd_edit_copy_full">Copiar &nbsp;⌘C</div>
+  <div class="ddi off" data-i18n-html data-i18n="dd_edit_paste_full">Colar &nbsp;⌘V</div>
+</div>
+
+<div class="dd" id="dd-special">
+  <div class="ddi" onclick="window.location.href='index.html'" data-i18n="dd_special_open_terminal">Abrir Terminal</div>
+  <div class="dds"></div>
+  <div class="ddi" data-i18n="dd_special_empty_trash">Esvaziar Lixo</div>
+</div>
+
+<div id="desktop">
+  <div class="win" id="main-win" style="width:480px;height:560px;left:80px;top:28px">
+
+    <div class="wtb">
+      <div class="wtb-bg"></div>
+      <div class="wbtn wclose" data-act="close"></div>
+      <div class="wtitle" data-i18n="win_about">About Me</div>
+      <div class="wbtn wzoom"  data-act="zoom"></div>
+    </div>
+
+    <div class="wbody">
+      <div class="wscroll">
+
+        <div class="av-hdr">
+          <div class="av-photo">👨‍💻</div>
+          <div>
+            <div class="av-name">David Arsénio Martins</div>
+            <div class="av-role"><span data-i18n="about_role">Software Developer</span> <span style="font-weight:normal;color:#888">— <span data-i18n="about_tagline">mas todos me chamam Vidi</span></span></div>
+            <div class="av-badges">
+              <span class="av-badge" data-i18n="badge_location">📍 Cascais, Portugal</span>
+              <span class="av-badge" data-i18n="badge_photo">📸 Ex-Fotógrafo Profissional</span>
+              <span class="av-badge" data-i18n="badge_open">💼 Aberto a oportunidades</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-body">
+
+          <div style="margin-bottom:16px">
+            <div class="stitle" data-i18n="stitle_bio">Bio</div>
+            <p class="about-bio" data-i18n="about_bio_1">Sou o David Arsénio Martins…</p>
+            <p class="about-bio" style="margin-top:10px" data-i18n="about_bio_2">Antes disso…</p>
+            <p class="about-bio" style="margin-top:10px" data-i18n="about_bio_3">Fora do código…</p>
+          </div>
+
+          <div style="margin-bottom:16px">
+            <div class="stitle" data-i18n="stitle_journey">Percurso</div>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-role" data-i18n="j3_role">Software Developer</div>
+                <div class="tl-where" data-i18n="j3_where">CESAE Digital</div>
+                <div class="tl-desc" data-i18n="j3_desc">A frequentar o curso…</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-role" data-i18n="j2_role">Fotógrafo Profissional</div>
+                <div class="tl-where" data-i18n="j2_where">Freelancer</div>
+                <div class="tl-desc" data-i18n="j2_desc">Anos de trabalho…</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-role" data-i18n="j1_role">Técnico de Gestão de Equipamentos Informáticos</div>
+                <div class="tl-where" data-i18n="j1_where">Escola Profissional de Tecnologia Digital</div>
+                <div class="tl-desc" data-i18n="j1_desc">Primeiros passos em IT…</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:16px">
+            <div class="stitle" data-i18n="stitle_education">Educação</div>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-role" data-i18n="edu2_role">Curso de Software Developer</div>
+                <div class="tl-where" data-i18n="edu2_where">CESAE Digital</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-role" data-i18n="edu1_role">Técnico de Gestão de Equipamentos Informáticos</div>
+                <div class="tl-where" data-i18n="edu1_where">Escola Profissional de Tecnologia Digital</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:16px">
+            <div class="stitle" data-i18n="stitle_tech_skills">Competências Técnicas</div>
+            <div class="tools-grid" style="margin-top:6px">
+              <span class="tag">Java</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Kotlin</span>
+              <span class="tag">Swift</span>
+            </div>
+            <div style="margin-top:8px;font-size:11px;color:#666">
+              <a href="skills.html" style="color:#3377CC;text-decoration:underline" data-i18n="see_full_skills">→ Ver Competências completas</a>
+            </div>
+          </div>
+
+          <div style="margin-bottom:16px">
+            <div class="stitle" data-i18n="stitle_current_portfolio">Portfolio Atual</div>
+            <p style="font-size:11px;line-height:1.7;color:#333">
+              <span data-i18n="current_portfolio_note">🕰 Este foi o meu primeiro site portfolio…</span>
+              <a href="https://ividi.dev/" target="_blank" style="color:#3377CC;text-decoration:underline">ividi.dev ↗</a>
+            </p>
+          </div>
+
+          <div style="padding-top:4px;padding-bottom:4px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="macbtn primary" href="https://ividi.dev/CV_DAM2026_en.pdf" target="_blank" data-i18n="btn_download_cv">⬇ Download CV (PDF)</a>
+            <a class="macbtn" href="contact.html" data-i18n="btn_contact">✉ Contactar</a>
+          </div>
+
+        </div><!-- /about-body -->
+      </div><!-- /wscroll -->
+    </div><!-- /wbody -->
+
+    <div class="wbar">
+      <span data-i18n="about_wbar">David Arsénio Martins — Software Developer · Cascais, Portugal</span>
+      <div class="wresize"></div>
+    </div>
+
+  </div>
+</div>
+
+<div id="overlay">
+  <div class="dlg">
+    <div class="dlg-ico" id="dlg-ico"></div>
+    <div class="dlg-msg" id="dlg-msg"></div>
+    <div class="dlg-row" id="dlg-row"></div>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="page.js"></script>
+</body>
+</html>

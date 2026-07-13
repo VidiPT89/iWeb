@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>David Arsénio Martins 'Vidi' — Software Developer</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- ═══════════════════════════════════════════════════════════════════════════
+     BOOT SCREEN
+══════════════════════════════════════════════════════════════════════════════ -->
+        <div id="boot">
+            <!-- Ícone clássico do Macintosh -->
+            <svg width="84" height="84" viewBox="0 0 84 84">
+                <!-- corpo -->
+                <rect
+                    x="10"
+                    y="6"
+                    width="64"
+                    height="68"
+                    rx="8"
+                    fill="#fff"
+                    stroke="#000"
+                    stroke-width="2.5"
+                />
+                <!-- ecrã -->
+                <rect
+                    x="16"
+                    y="12"
+                    width="52"
+                    height="34"
+                    rx="2"
+                    fill="#D4D0C8"
+                    stroke="#000"
+                    stroke-width="1.5"
+                />
+                <!-- cara feliz no ecrã -->
+                <circle cx="30" cy="31" r="4" fill="#000" />
+                <circle cx="54" cy="31" r="4" fill="#000" />
+                <path
+                    d="M 26 41 Q 42 52 58 41"
+                    stroke="#000"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke-linecap="round"
+                />
+                <!-- separador base -->
+                <rect
+                    x="16"
+                    y="50"
+                    width="52"
+                    height="3"
+                    rx="1"
+                    fill="#C0C0C0"
+                    stroke="#888"
+                    stroke-width="1"
+                />
+                <!-- base com textura platinum -->
+                <rect
+                    x="10"
+                    y="55"
+                    width="64"
+                    height="16"
+                    rx="4"
+                    fill="#E0DDD8"
+                    stroke="#000"
+                    stroke-width="1.5"
+                />
+                <!-- slot da disquete -->
+                <rect
+                    x="24"
+                    y="59"
+                    width="36"
+                    height="8"
+                    rx="1"
+                    fill="#C8C4BF"
+                    stroke="#999"
+                    stroke-width="1"
+                />
+                <rect x="36" y="60" width="6" height="6" rx=".5" fill="#999" />
+            </svg>
+
+            <div id="boot-title" data-i18n="boot_title">Portfolio Vidi.deV</div>
+            <div id="boot-bar-wrap"><div id="boot-bar"></div></div>
+            <div id="boot-msg" data-i18n="boot_0">A iniciar…</div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════════════════
+     MENU BAR
+══════════════════════════════════════════════════════════════════════════════ -->
+        <nav id="menubar">
+            <!-- Maçã Rainbow — ícone SVG com gradiente de cor real -->
+            <div class="mb mb-apple" data-dd="dd-apple">
+                <svg
+                    width="14"
+                    height="17"
+                    viewBox="0 0 14 17"
+                    style="display: block"
+                >
+                    <defs>
+                        <linearGradient id="rbow" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#4CAF50" />
+                            <stop offset="20%" stop-color="#8BC34A" />
+                            <stop offset="40%" stop-color="#FFEB3B" />
+                            <stop offset="60%" stop-color="#FF9800" />
+                            <stop offset="80%" stop-color="#F44336" />
+                            <stop offset="100%" stop-color="#9C27B0" />
+                        </linearGradient>
+                    </defs>
+                    <!-- folha -->
+                    <path
+                        d="M7 1 C7 1 9 -0.5 11 1 C11 1 9.5 2 9.5 3.5"
+                        stroke="url(#rbow)"
+                        stroke-width="1.5"
+                        fill="none"
+                        stroke-linecap="round"
+                    />
+                    <!-- maçã com dentada -->
+                    <path
+                        d="M9.5 3.5 C11.5 3.5 14 5.5 14 9
+               C14 13 11.5 17 9 17 C8 17 7.5 16 7 16
+               C6.5 16 6 17 5 17 C2.5 17 0 13 0 9
+               C0 5.5 2.5 3.5 4.5 3.5 C5.5 3.5 6.5 3.5 7 3.5
+               C7.5 3.5 8.5 3.5 9.5 3.5Z"
+                        fill="url(#rbow)"
+                    />
+                </svg>
+            </div>
+
+            <div class="mb" data-dd="dd-file" data-i18n="menu_file">Ficheiro</div>
+            <div class="mb" data-dd="dd-edit" data-i18n="menu_edit">Editar</div>
+            <div class="mb" data-dd="dd-view" data-i18n="menu_view">Ver</div>
+            <div class="mb" data-dd="dd-special" data-i18n="menu_special">Especial</div>
+            <div id="mb-clock"></div>
+        </nav>
+
+        <!-- ═══════════════════════════════════════════════════════════════════════════
+     DROPDOWN MENUS
+══════════════════════════════════════════════════════════════════════════════ -->
+        <div class="dd" id="dd-apple">
+            <div class="ddi" onclick="openDlg('about-sys')" data-i18n="dd_apple_about_sys">
+                Sobre este Portfolio…
+            </div>
+            <div class="dds"></div>
+            <div class="ddi off" data-i18n="dd_apple_control_panel">Painel de Controlo</div>
+            <div class="dds"></div>
+            <div class="ddi" onclick="openDlg('restart')" data-i18n="dd_apple_restart">Reiniciar…</div>
+        </div>
+
+        <div class="dd" id="dd-file">
+            <div class="ddi" onclick="openWin('finder')" data-i18n="dd_file_open_portfolio">
+                Abrir Portfolio HD
+            </div>
+            <div class="dds"></div>
+            <div class="ddi" onclick="openWin('about')" data-i18n="win_about">About Me</div>
+            <div class="ddi" onclick="openWin('projects')" data-i18n="win_projects">Projects</div>
+            <div class="ddi" onclick="openWin('skills')" data-i18n="win_skills">Skills</div>
+            <div class="ddi" onclick="openWin('contact')" data-i18n="win_contact">Contact</div>
+            <div class="dds"></div>
+            <div class="ddi" onclick="openWin('pacman')" data-i18n="dd_special_play_pacman">🕹 Pac-Man</div>
+            <div class="ddi" onclick="openWin('mario')" data-i18n="dd_special_play_mario">🍄 Mario Bros</div>
+            <div class="dds"></div>
+            <div class="ddi" onclick="closeActive()" data-i18n-html data-i18n="dd_file_close_window_full">
+                Fechar Janela &nbsp;⌘W
+            </div>
+        </div>
+
+        <div class="dd" id="dd-edit">
+            <div class="ddi off" data-i18n-html data-i18n="dd_edit_undo_full">Desfazer &nbsp;⌘Z</div>
+            <div class="dds"></div>
+            <div class="ddi off" data-i18n-html data-i18n="dd_edit_cut_full">Cortar &nbsp;⌘X</div>
+            <div class="ddi off" data-i18n-html data-i18n="dd_edit_copy_full">Copiar &nbsp;⌘C</div>
+            <div class="ddi off" data-i18n-html data-i18n="dd_edit_paste_full">Colar &nbsp;⌘V</div>
+        </div>
+
+        <div class="dd" id="dd-view">
+            <div class="ddi" data-i18n="dd_view_by_icon">Por Ícone</div>
+            <div class="ddi" data-i18n="dd_view_by_name">Por Nome</div>
+            <div class="ddi" data-i18n="dd_view_by_date">Por Data</div>
+            <div class="dds"></div>
+            <div class="ddi" data-i18n="dd_view_arrange">Organizar</div>
+        </div>
+
+        <div class="dd" id="dd-special">
+            <div class="ddi" onclick="openWin('terminal')" data-i18n="dd_special_open_terminal">Abrir Terminal</div>
+            <div class="ddi" onclick="openWin('pacman')" data-i18n="dd_special_play_pacman">🕹 Jogar Pac-Man</div>
+            <div class="ddi" onclick="openWin('mario')" data-i18n="dd_special_play_mario">
+                🍄 Jogar Mario Bros
+            </div>
+            <div class="dds"></div>
+            <div class="ddi" data-i18n="dd_special_empty_trash">Esvaziar Lixo</div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════════════════
+     DESKTOP  —  ícones à direita como no Finder clássico
+══════════════════════════════════════════════════════════════════════════════ -->
+        <div id="desktop">
+            <!-- ── HD ──────────────────────────────────────────────────────────── -->
+            <div
+                class="icon"
+                style="right: 12px; top: 8px"
+                onclick="selectIcon(this)"
+                ondblclick="openWin('finder')"
+            >
+                <svg viewBox="0 0 32 32">
+                    <!-- corpo HD (platinum 3D) -->
+                    <rect
+                        x="2"
+                        y="6"
+                        width="28"
+                        height="20"
+                        rx="3"
+                        fill="#C8C4BF"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                    <rect
+                        x="2"
+                        y="6"
+                        width="28"
+                        height="3"
+                        rx="3"
+                        fill="#E0DDD8"
+                    />
+                    <!-- prato -->
+                    <circle
+                        cx="22"
+                        cy="16"
+                        r="5.5"
+                        fill="#AAAAAA"
+                        stroke="#000"
+                        stroke-width="1"
+                    />
+                    <circle
+                        cx="22"
+                        cy="16"
+                        r="3"
+                        fill="#888"
+                        stroke="#666"
+                        stroke-width=".5"
+                    />
+                    <circle cx="22" cy="16" r="1.2" fill="#333" />
+                    <!-- linhas de texto -->
+                    <rect
+                        x="4"
+                        y="11"
+                        width="14"
+                        height="2"
+                        rx="1"
+                        fill="#888"
+                    />
+                    <rect
+                        x="4"
+                        y="15"
+                        width="10"
+                        height="2"
+                        rx="1"
+                        fill="#888"
+                    />
+                    <rect
+                        x="4"
+                        y="19"
+                        width="12"
+                        height="2"
+                        rx="1"
+                        fill="#888"
+                    />
+                    <!-- etiqueta de cor -->
+                    <rect
+                        x="4"
+                        y="23"
+                        width="6"
+                        height="1.5"
+                        rx=".5"
+                        fill="#3377CC"
+                    />
+                </svg>
+                <span class="icon-lbl" data-i18n="win_finder">Portfolio HD</span>
+            </div>
+
+            <!-- ── About Me ─────────────────────────────────────────────────── -->
+            <div
+                class="icon"
+                style="right: 12px; top: 90px"
+                onclick="selectIcon(this)"
+                ondblclick="openWin('about')"
+            >
+                <svg viewBox="0 0 32 32">
+                    <!-- documento com cabeçalho azul -->
+                    <rect
+                        x="3"
+                        y="2"
+                        width="26"
+                        height="28"
+                        rx="2"
+                        fill="#fff"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                    <rect
+                        x="3"
+                        y="2"
+                        width="26"
+                        height="8"
+                        rx="2"
+                        fill="#3377CC"
+                    />
+                    <rect x="3" y="7" width="26" height="3" fill="#3377CC" />
+                    <!-- avatar circular no cabeçalho -->
+                    <circle cx="16" cy="6" r="2.5" fill="#fff" />
+                    <!-- linhas de texto -->
+                    <rect
+                        x="7"
+                        y="14"
+                        width="10"
+                        height="1.5"
+                        rx=".5"
+                        fill="#aaa"
+                    />
+                    <rect
+                        x="7"
+                        y="18"
+                        width="14"
+                        height="1.5"
+                        rx=".5"
+                        fill="#aaa"
+                    />
+                    <rect
+                        x="7"
+                        y="22"
+                        width="12"
+                        height="1.5"
+                        rx=".5"
+                        fill="#aaa"
+                    />
+                    <rect
+                        x="7"
+                        y="26"
+                        width="8"
+                        height="1.5"
+                        rx=".5"
+                        fill="#aaa"
+                    />
+                </svg>
+                <span class="icon-lbl" data-i18n="win_about">About Me</span>
+            </div>
+
+            <!-- ── Projects ─────────────────────────────────────────────────── -->
+            <div
+                class="icon"
+                style="right: 12px; top: 178px"
+                onclick="selectIcon(this)"
+                ondblclick="openWin('projects')"
+            >
+                <svg viewBox="0 0 32 32">
+                    <!-- pasta amarela estilo System 7 -->
+                    <rect
+                        x="2"
+                        y="8"
+                        width="28"
+                        height="21"
+                        rx="1"
+                        fill="#FFD84D"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                    <rect x="2" y="8" width="28" height="3" fill="#FFC000" />
+                    <!-- aba da pasta -->
+                    <path
+                        d="M2,8 L2,5 Q2,4 3,4 L12,4 Q13,4 14,5 L15,8Z"
+                        fill="#FFD84D"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                    <!-- linhas de conteúdo -->
+                    <rect
+                        x="6"
+                        y="14"
+                        width="20"
+                        height="1.5"
+                        rx=".5"
+                        fill="#C8A000"
+                    />
+                    <rect
+                        x="6"
+                        y="18"
+                        width="16"
+                        height="1.5"
+                        rx=".5"
+                        fill="#C8A000"
+                    />
+                    <rect
+                        x="6"
+                        y="22"
+                        width="18"
+                        height="1.5"
+                        rx=".5"
+                        fill="#C8A000"
+                    />
+                </svg>
+                <span class="icon-lbl" data-i18n="win_projects">Projects</span>
+            </div>
+
+            <!-- ── Skills ───────────────────────────────────────────────────── -->
+            <div
+                class="icon"
+                style="right: 12px; top: 266px"
+                onclick="selectIcon(this)"
+                ondblclick="openWin('skills')"
+            >
+                <svg viewBox="0 0 32 32">
+                    <!-- fundo documento -->
+                    <rect
+                        x="3"
+                        y="3"
+                        width="26"
+                        height="26"
+                        rx="2"
+                        fill="#fff"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                    <!-- barras de skills a cores -->
+                    <rect
+                        x="6"
+                        y="8"
+                        width="20"
+                        height="3.5"
+                        rx="1"
+                        fill="#3377CC"
+                    />
+                    <rect
+                        x="6"
+                        y="14"
+                        width="14"
+                        height="3.5"
+                        rx="1"
+                        fill="#228833"
+                    />
+                    <rect
+                        x="6"
+                        y="20"
+                        width="17"
+                        height="3.5"
+                        rx="1"
+                        fill="#CC3322"
+                    />
+                    <!-- fundo das barras -->
+                    <rect
+                        x="6"
+                        y="8"
+                        width="20"
+                        height="3.5"
+                        rx="1"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width=".5"
+                    />
+                    <rect
+                        x="6"
+                        y="14"
+                        width="20"
+                        height="3.5"
+                        rx="1"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width=".5"
+                    />
+                    <rect
+                        x="6"
+                        y="20"
+                        width="20"
+                        height="3.5"
+                        rx="1"
+                        fill="none"
+                        stroke="#000"
+                        stroke-width=".5"
+                    />
+                </svg>
+                <span class="icon-lbl" data-i18n="win_skills">Skills</span>
+            </div>
+
+            <!-- ── Contact ──────────────────────────────────────────────────── -->
+            <div
+                class="icon"
+                style="right: 12px; top: 354px"
+                onclick="selectIcon(this)"
+                ondblclick="openWin('contact')"
+            >
+                <svg viewBox="0 0 32 32">
+                    <!-- envelope com cor -->
+                    <rect
+                        x="2"
+                        y="6"
+                        width="28"
+                        height="20"
+                        rx="2"
+                        fill="#fff"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                    <!-- aba superior do envelope -->
+                    <path
+                        d="M2,6 L16,18 L30,6"
+                        fill="#DDEEFF"
+                        stroke="#000"
+                        stroke-width="1.5"
+                        stroke-linejoin="round"
+                    />
+                    <!-- detalhe de cor na aba -->
+                    <path
+                        d="M2,6 L16,18 L30,6"
+                        fill="none"
+                        stroke="#3377CC"
+                        stroke-width="1"
+                    />
+                </svg>
+                <span class="icon-lbl" data-i18n="win_contact">Contact</span>
+            </div>
+
+            <!-- ── Terminal ─────────────────────────────────────────────────── -->
+            <div
+                class="icon"
+                style="right: 12px; top: 442px"
+                onclick="selectIcon(this)"
+                ondblclick="openWin('terminal')"
+            >
+                <svg viewBox="0 0 32 32">
+                    <!-- moldura com cor -->
+                    <rect
+                        x="2"
+                        y="3"
+                        width="28"
+                        height="26"
+                        rx="2"
+                        fill="#222"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                    <rect
+                        x="2"
+                        y="3"
+                        width="28"
+                        height="5"
+                        rx="2"
+                        fill="#444"
+                    />
+                    <!-- botões de semáforo -->
+                    <circle cx="7" cy="5.5" r="1.5" fill="#FF4444" />
+                    <circle cx="11" cy="5.5" r="1.5" fill="#FFBB00" />
+                    <circle cx="15" cy="5.5" r="1.5" fill="#44BB44" />
+                    <!-- ecrã verde -->
+                    <rect x="4" y="9" width="24" height="18" fill="#001800" />
+                    <!-- texto do terminal -->
+                    <text
+                        x="6"
+                        y="18"
+                        fill="#00CC00"
+                        font-size="6"
+                        font-family="monospace"
+                    >
+                        $ whoami
+                    </text>
+                    <text
+                        x="6"
+                        y="24"
+                        fill="#00AA00"
+                        font-size="5"
+                        font-family="monospace"
+                    >
+                        david.martins
+                    </text>
+                </svg>
+                <span class="icon-lbl" data-i18n="win_terminal">Terminal</span>
+            </div>
+
+            <!-- ── Pac-Man ──────────────────────────────────────────────────── -->
+            <div
+                class="icon"
+                style="right: 12px; top: 530px"
+                onclick="
+                    selectIcon(this);
+                    openWin('pacman');
+                "
+                ondblclick="openWin('pacman')"
+            >
+                <svg viewBox="0 0 32 32">
+                    <circle
+                        cx="16"
+                        cy="16"
+                        r="13"
+                        fill="#FFD700"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                    <path d="M16,16 L29,10 A13,13 0 0,0 29,22 Z" fill="#000" />
+                    <circle cx="19" cy="8" r="2" fill="#000" />
+                </svg>
+                <span class="icon-lbl">Pac-Man</span>
+            </div>
+
+            <!-- ── Mario ────────────────────────────────────────────────────── -->
+            <div
+                class="icon"
+                style="right: 100px; top: 530px"
+                onclick="
+                    selectIcon(this);
+                    openWin('mario');
+                "
+                ondblclick="openWin('mario')"
+            >
+                <svg viewBox="0 0 32 32">
+                    <!-- Hat -->
+                    <rect
+                        x="8"
+                        y="4"
+                        width="16"
+                        height="4"
+                        rx="1"
+                        fill="#CC0000"
+                    />
+                    <rect
+                        x="6"
+                        y="7"
+                        width="20"
+                        height="3"
+                        rx="1"
+                        fill="#CC0000"
+                    />
+                    <!-- Face -->
+                    <rect
+                        x="9"
+                        y="10"
+                        width="14"
+                        height="8"
+                        rx="2"
+                        fill="#FFAA66"
+                    />
+                    <!-- Eyes -->
+                    <rect x="12" y="11" width="3" height="3" fill="#000" />
+                    <rect x="18" y="11" width="3" height="3" fill="#000" />
+                    <!-- Mustache -->
+                    <rect x="10" y="15" width="12" height="2" fill="#7a4100" />
+                    <!-- Body (overalls blue) -->
+                    <rect
+                        x="8"
+                        y="18"
+                        width="16"
+                        height="8"
+                        rx="1"
+                        fill="#3050c8"
+                    />
+                    <!-- Buttons -->
+                    <rect x="11" y="20" width="2" height="2" fill="#FFD700" />
+                    <rect x="19" y="20" width="2" height="2" fill="#FFD700" />
+                    <!-- Feet -->
+                    <rect
+                        x="7"
+                        y="26"
+                        width="7"
+                        height="4"
+                        rx="1"
+                        fill="#7a4100"
+                    />
+                    <rect
+                        x="18"
+                        y="26"
+                        width="7"
+                        height="4"
+                        rx="1"
+                        fill="#7a4100"
+                    />
+                </svg>
+                <span class="icon-lbl">Mario Bros</span>
+            </div>
+
+            <!-- ── Lixo ─────────────────────────────────────────────────────── -->
+            <div
+                class="icon"
+                style="right: 12px; bottom: 10px"
+                onclick="selectIcon(this)"
+                ondblclick="openWin('trash')"
+            >
+                <svg viewBox="0 0 32 32">
+                    <!-- lata de lixo estilo Mac (vazia = sem linhas internas) -->
+                    <rect
+                        x="8"
+                        y="10"
+                        width="16"
+                        height="18"
+                        rx="1"
+                        fill="#E0DDD8"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                    <!-- arcos verticais -->
+                    <line
+                        x1="12"
+                        y1="10"
+                        x2="12"
+                        y2="28"
+                        stroke="#bbb"
+                        stroke-width=".8"
+                    />
+                    <line
+                        x1="16"
+                        y1="10"
+                        x2="16"
+                        y2="28"
+                        stroke="#bbb"
+                        stroke-width=".8"
+                    />
+                    <line
+                        x1="20"
+                        y1="10"
+                        x2="20"
+                        y2="28"
+                        stroke="#bbb"
+                        stroke-width=".8"
+                    />
+                    <!-- tampa -->
+                    <rect
+                        x="5"
+                        y="7"
+                        width="22"
+                        height="4"
+                        rx="1"
+                        fill="#C8C4BF"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                    <!-- pega da tampa -->
+                    <rect
+                        x="13"
+                        y="4"
+                        width="6"
+                        height="4"
+                        rx="1"
+                        fill="#C8C4BF"
+                        stroke="#000"
+                        stroke-width="1.5"
+                    />
+                </svg>
+                <span class="icon-lbl" data-i18n="win_trash">Lixo</span>
+            </div>
+        </div>
+        <!-- /desktop -->
+
+        <!-- ═══════════════════════════════════════════════════════════════════════════
+     CONTEXT MENU
+══════════════════════════════════════════════════════════════════════════════ -->
+        <div id="ctx">
+            <div class="cti" onclick="openWin('finder')" data-i18n="ctx_open_portfolio">
+                Abrir Portfolio HD
+            </div>
+            <div class="cti" onclick="openWin('about')" data-i18n="win_about">About Me</div>
+            <div class="cts"></div>
+            <div class="cti off" data-i18n="ctx_new_folder">Nova Pasta</div>
+            <div class="cti off" data-i18n="ctx_get_info">Obter Informações</div>
+            <div class="cts"></div>
+            <div class="cti" data-i18n="ctx_arrange">Organizar</div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════════════════
+     DIALOG / OVERLAY
+══════════════════════════════════════════════════════════════════════════════ -->
+        <div id="overlay">
+            <div class="dlg">
+                <div class="dlg-ico" id="dlg-ico"></div>
+                <div class="dlg-msg" id="dlg-msg"></div>
+                <div class="dlg-row" id="dlg-row"></div>
+            </div>
+        </div>
+
+        <script src="i18n.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
