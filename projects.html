@@ -180,7 +180,6 @@ const LANG_COLORS = {
   'CSS':        '#563d7c',
   'Swift':      '#F05138',
   'Java':       '#b07219',
-  'Kotlin':     '#A97BFF',
   'Python':     '#3572A5',
   'Ruby':       '#701516',
   'Go':         '#00ADD8',
@@ -194,7 +193,7 @@ function repoEmoji(repo) {
   const n = repo.name.toLowerCase();
   if (['spaceinvaders','pacman','frogger','memoria','pedrapapeloutesoura','10x10','4exercises'].includes(n)) return '🎮';
   if (n.includes('ios') || repo.language === 'Swift') return '🍎';
-  if (repo.language === 'Java' || repo.language === 'Kotlin') return '🤖';
+  if (repo.language === 'Java') return '🤖';
   if (n.includes('api') || n.includes('backend')) return '⚙️';
   if (n.includes('dashboard')) return '📊';
   if (n.includes('app') || n.includes('mobile')) return '📱';

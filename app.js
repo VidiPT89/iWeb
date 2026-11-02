@@ -323,7 +323,6 @@ function bAbout() {
           <span class="tag">React</span>
           <span class="tag">Next.js</span>
           <span class="tag">Node.js</span>
-          <span class="tag">Kotlin</span>
           <span class="tag">Swift</span>
         </div>
         <div style="margin-top:8px;font-size:11px;color:#666">
@@ -367,7 +366,7 @@ const GH_USER = 'VidiPT89';
 const LANG_COLORS = {
   JavaScript: '#f1e05a', TypeScript: '#3178c6', HTML: '#e34c26',
   CSS: '#563d7c', Swift: '#F05138', Java: '#b07219',
-  Kotlin: '#A97BFF', Python: '#3572A5',
+  Python: '#3572A5',
 };
 
 /* linguagens que correm no browser */
@@ -378,7 +377,7 @@ function repoEmoji(r) {
   const games = ['spaceinvaders','pacman','frogger','memoria','pedrapapeloutesoura','10x10','4exercises'];
   if (games.includes(n))             return '🎮';
   if (r.language === 'Swift')        return '🍎';
-  if (r.language === 'Java' || r.language === 'Kotlin') return '🤖';
+  if (r.language === 'Java')         return '🤖';
   if (n.includes('dashboard'))       return '📊';
   if (n.includes('api') || n.includes('backend')) return '⚙️';
   return '📁';
@@ -526,7 +525,7 @@ function openProjectWin(id, name, url) {
 const SKILL_CATEGORIES = [
   { key:'stitle_software_dev', tools:['Java','JavaScript','TypeScript','HTML/CSS','Bootstrap','React','Next.js','Node.js'] },
   { key:'stitle_database',     tools:['SQL / MySQL','MongoDB','Cloudflare','Neon'] },
-  { key:'stitle_mobile',       tools:['Android','iOS','Kotlin','Swift','Android Studio','Xcode','TestFlight'] },
+  { key:'stitle_mobile',       tools:['iOS','Swift','Xcode','TestFlight'] },
   { key:'stitle_tools_practices', tools:['Git','GitHub','Vercel','Docker','Jira','Figma','Notion','Canva','Visual Studio Code','Discord','Slack','Linux','Windows','macOS','Terminal','Agile','QA'] },
   { key:'stitle_office',       tools:['Word','Excel','PowerPoint','Outlook','Teams'] },
   { key:'stitle_photography',  tools:['Photoshop','Lightroom','Bridge','PhotoMechanic','Capture One'] },
@@ -636,7 +635,7 @@ const T_LINES = [
   { t:200,  cls:'',     text:'' },
   { t:300,  cls:'cmd',  text:'cat skills.txt' },
   { t:350,  cls:'out',  text:'Java · JavaScript · TypeScript · React · Next.js · Node.js' },
-  { t:80,   cls:'out',  text:'Kotlin · Swift · SQL/MySQL · MongoDB · Docker · Git' },
+  { t:80,   cls:'out',  text:'Swift · SQL/MySQL · MongoDB · Docker · Git' },
   { t:200,  cls:'',     text:'' },
   { t:300,  cls:'cmd',  text:'ls -la projects/' },
   { t:350,  cls:'out',  text:'drwxr-xr-x  iBeyblade/    pacmanHD/    Xadrez/' },
